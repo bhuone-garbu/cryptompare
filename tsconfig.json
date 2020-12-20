@@ -19,12 +19,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "compilerOptions": {
-      "typeRoots": [
-        "./src/types",
-        "node_modules/@types"
-      ]
-    }
+    "typeRoots": [
+      "node_modules/@types",
+      "./src/types/common",
+    ],
   },
   "exclude": [
     "node_modules",
