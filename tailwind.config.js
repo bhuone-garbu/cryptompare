@@ -1,5 +1,3 @@
-const colors = require('tailwindcss/colors');
-
 module.exports = {
   future: {},
   purge: ['./pages/**/*.ts', './components/**/*.ts'],
@@ -7,8 +5,5 @@ module.exports = {
     extend: {},
   },
   variants: {},
-  plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
-  ],
+  plugins: [require('tailwindcss'), require('autoprefixer')],
 };

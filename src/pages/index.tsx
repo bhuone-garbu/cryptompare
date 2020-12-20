@@ -9,7 +9,6 @@ const Home = (): JSX.Element => (
     <main className="mt-12 lg:mt-32">
       <h1>Finance test h1</h1>
     </main>
-
   </div>
 );
 
