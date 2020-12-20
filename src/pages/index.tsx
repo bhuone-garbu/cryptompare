@@ -1,15 +1,24 @@
 import Head from 'next/head';
+// import type { AppProps, AppContext } from 'next/app';
 
-const Home = (): JSX.Element => (
-  <div className="container mx-auto p-6 flex items-center min-h-screen">
-    <Head>
-      <title>Loan (finance) calculator demo</title>
-    </Head>
+interface Props {
+  cryptos: NomicCrypto[];
+}
 
-    <main className="mt-12 lg:mt-32">
-      <h1>Finance test h1</h1>
-    </main>
-  </div>
-);
+const Home = ({ cryptos }: Props): JSX.Element => {
+  console.warn('cryptos ', cryptos);
+  return (
+    <div className="container max-w-screen-md mx-auto p-6 flex items-center h-screen">
+      <Head>
+        <title>Top 100 crypto dashboard</title>
+      </Head>
+
+      <main className="mt-12 w-full">
+        <h1>The top 100 crypto currencies</h1>
+        <h2>Dashboard</h2>
+      </main>
+    </div>
+  );
+};
 
 export default Home;
