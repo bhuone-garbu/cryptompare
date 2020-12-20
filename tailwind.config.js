@@ -1,11 +1,14 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  future: {},
+  purge: ['./pages/**/*.ts', './components/**/*.ts'],
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
+  variants: {},
+  plugins: [
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ],
+};
