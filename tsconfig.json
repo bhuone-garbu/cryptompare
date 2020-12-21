@@ -1,13 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": "src/.",
+    "allowJs": false,
+    "baseUrl": "src",
+    "paths": {
+      "components/*": [
+        "components/*"
+      ],
+    },
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": false,
     "declaration": true,
     "skipLibCheck": true,
     "strict": false,
@@ -30,7 +35,6 @@
     "out"
   ],
   "include": [
-    "next-env.d.ts",
     "src"
   ]
 }

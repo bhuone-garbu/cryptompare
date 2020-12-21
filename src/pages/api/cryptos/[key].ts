@@ -9,7 +9,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
   ).then(res => res.json());
 
   res.statusCode = 200;
-  res.json(data[0]);
+  res.json(data);
 };
 
 export default handler;
