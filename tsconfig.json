@@ -26,7 +26,7 @@
     "jsx": "preserve",
     "typeRoots": [
       "node_modules/@types",
-      "./src/types/common",
+      "./src/types",
     ],
   },
   "exclude": [

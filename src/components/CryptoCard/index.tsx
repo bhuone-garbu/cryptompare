@@ -3,11 +3,12 @@ interface Props {
 }
 
 const CryptoCard = ({ crypto }: Props): JSX.Element => (
-  <div className="grid grid-cols-12 border-solid border-t border-r border-l px-6">
-    <div className="col-auto font-semibold flex items-center">{crypto.rank}</div>
-    <div className="p-2 col-span-3 flex items-center">
+  <div className="crypto-card">
+    <div className="text-gray-500 flex items-center">{crypto.rank}</div>
+    <div className="p-2 flex items-center justify-center">
       <img
-        className="inline object-contain h-14 w-14"
+        className="inline object-contain h-20 w-20"
+        loading="lazy"
         src={crypto.logo_url}
         alt={`${crypto.name.toLocaleLowerCase()}-log0`}
       />

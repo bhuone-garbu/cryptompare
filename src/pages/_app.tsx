@@ -6,7 +6,7 @@ import '../styles/index.css';
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
   <>
     <Head>
-      <link rel="icon" href="/vercel.svg" />
+      <link rel="icon" href="/bitcoin.svg" />
     </Head>
     <Component {...pageProps} />
   </>
