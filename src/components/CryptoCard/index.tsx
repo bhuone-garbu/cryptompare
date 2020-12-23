@@ -13,7 +13,7 @@ const CryptoCard = ({ crypto }: Props): JSX.Element => (
         alt={`${crypto.name.toLocaleLowerCase()}-log0`}
       />
       <div className="ml-4">
-        <p>{crypto.name}</p>
+        <p className="font-semibold">{crypto.name}</p>
         <p className="text-gray-500">{crypto.symbol}</p>
       </div>
     </div>

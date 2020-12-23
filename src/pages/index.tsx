@@ -12,10 +12,12 @@ const Home: React.FC<Props> = ({ cryptos }: Props) => (
     <Head>
       <title>Crypto currencies leaderboard</title>
     </Head>
-    <section className="w-full min-h-1/4 max-h-96 bg-blue-700 text-yellow-50 py-16 md:py-28">
+    <section className="w-full min-h-1/4 max-h-96 bg-gray-900 text-yellow-50 py-16 md:py-28">
       <div className="flex flex-col md:items-center container max-w-screen-lg mx-auto">
-        <h1 className="font-bold text-5xl tracking-wide md:text-6xl px-3">Crypto Leaderboard</h1>
-        <h2 className="text-md px-3 mt-4">
+        <h1 className="mt-9 font-display text-4xl leading-none font-semibold text-white sm:text-5xl lg:text-6xl">
+          Crypto Leaderboard
+        </h1>
+        <h2 className="mt-2 max-w-xl mx-auto text-xl lg:max-w-3xl lg:text-2xl text-gray-300">
           Your simple guide to the top 100 crypto on the market right now
         </h2>
       </div>
