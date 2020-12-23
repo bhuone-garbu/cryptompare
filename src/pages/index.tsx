@@ -3,6 +3,7 @@ import Head from 'next/head';
 // import type { AppProps, AppContext } from 'next/app';
 
 import CryptoCard from 'components/CryptoCard';
+import MiniHero from 'components/MiniHero';
 
 const Home = (): JSX.Element => {
   const [cryptos, setCryptos] = useState<NomicCrypto[]>([]);
@@ -18,17 +19,21 @@ const Home = (): JSX.Element => {
   }, []);
 
   return (
-    <div className="container bg-white min-h-screen max-w-screen-lg mx-auto p-6 ts">
-      <Head>
-        <title>Top 100 crypto dashboard</title>
-      </Head>
+    <>
+      <div className="container bg-white rounded min-h-screen max-w-screen-lg mx-auto">
+        <Head>
+          <title>Crypto currencies leaderboard</title>
+        </Head>
+        <div className="flex flex-col items-center justify-center py-20 w-full bg-blue-800 text-yellow-50">
+          <h1 className="font-bold text-6xl px-3">Crypto leaderboard</h1>
+          <h2 className="font-semibold text-2xl px-3 mt-4">The top 100 crypto currencies</h2>
+        </div>
 
-      <main className="mt-12 w-full">
-        <h1>The top 100 crypto currencies</h1>
-        <h2>Dashboard</h2>
-        {cryptos.length && cryptos.map(c => <CryptoCard key={c.id} crypto={c} />)}
-      </main>
-    </div>
+        <main className="w-full">
+          {cryptos.length && cryptos.map(c => <CryptoCard key={c.id} crypto={c} />)}
+        </main>
+      </div>
+    </>
   );
 };
 
