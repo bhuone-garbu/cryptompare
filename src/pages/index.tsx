@@ -1,40 +1,44 @@
-import { useState, useEffect } from 'react';
 import Head from 'next/head';
-// import type { AppProps, AppContext } from 'next/app';
+import type { GetServerSideProps } from 'next';
 
 import CryptoCard from 'components/CryptoCard';
-import MiniHero from 'components/MiniHero';
 
-const Home = (): JSX.Element => {
-  const [cryptos, setCryptos] = useState<NomicCrypto[]>([]);
+interface Props {
+  cryptos: NomicCrypto[];
+}
 
-  useEffect(() => {
-    const fetchCryptos = async () => {
-      const data = await fetch(`http://${window.location.host}/api/cryptos`).then(res =>
-        res.json(),
-      );
-      setCryptos(data);
-    };
-    fetchCryptos();
-  }, []);
-
+const Home = ({ cryptos }: Props): JSX.Element => {
   return (
-    <>
-      <div className="container bg-white rounded min-h-screen max-w-screen-lg mx-auto">
-        <Head>
-          <title>Crypto currencies leaderboard</title>
-        </Head>
-        <div className="flex flex-col items-center justify-center py-20 w-full bg-blue-800 text-yellow-50">
-          <h1 className="font-bold text-6xl px-3">Crypto leaderboard</h1>
-          <h2 className="font-semibold text-2xl px-3 mt-4">The top 100 crypto currencies</h2>
+    <main className="min-h-screen h-screen">
+      <Head>
+        <title>Crypto currencies leaderboard</title>
+      </Head>
+      <section className="flex flex-col w-full min-h-1/2 max-h-96 bg-blue-700 text-yellow-50 pt-32 pb-20">
+        <div className="container max-w-screen-lg mx-auto">
+          <h1 className="font-bold text-6xl px-3">Crypto Leaderboard</h1>
+          <h2 className="text-md px-3 mt-4">
+            Your simple guide to the top 100 crypto on the market right now
+          </h2>
         </div>
-
-        <main className="w-full">
-          {cryptos.length && cryptos.map(c => <CryptoCard key={c.id} crypto={c} />)}
-        </main>
-      </div>
-    </>
+      </section>
+      <section className="stop-gradient">
+        <div className="container bg-white max-w-screen-lg mx-auto">
+          <div className="w-full rounded-3xl">
+            {cryptos.map(c => (
+              <CryptoCard key={c.id} crypto={c} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const cryptos = await fetch('http://localhost:3000/api/cryptos').then(res => res.json());
+  return {
+    props: { cryptos },
+  };
 };
 
 export default Home;
