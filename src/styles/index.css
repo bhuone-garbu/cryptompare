@@ -16,8 +16,8 @@ body {
     background: linear-gradient(
       to bottom,
       theme(colors.gray.900) 0%,
-      theme(colors.gray.900) 10.5%,
-      theme(colors.lightBlue) 10.5%,
+      theme(colors.gray.900) 10%,
+      theme(colors.lightBlue) 10%,
       theme(colors.lightBlue) 100%
     );
   }

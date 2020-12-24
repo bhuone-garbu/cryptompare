@@ -2,12 +2,12 @@ interface Props {
   crypto: NomicCrypto;
 }
 
-const CryptoCard = ({ crypto }: Props): JSX.Element => (
-  <div className="crypto-card">
-    <div className="text-gray-500 flex items-center">{crypto.rank}</div>
-    <div className="p-2 flex items-center justify-center">
+const CryptoCardRow = ({ crypto }: Props): JSX.Element => (
+  <tr>
+    <td className="px-6 py-3 text-sm hidden sm:table-cell text-gray-500">{crypto.rank}</td>
+    <td className="px-6 py-3 whitespace-nowrap flex items-center justify-start">
       <img
-        className="inline object-contain h-20 w-20"
+        className="object-contain h-20 w-20"
         loading="lazy"
         src={crypto.logo_url}
         alt={`${crypto.name.toLocaleLowerCase()}-log0`}
@@ -16,14 +16,14 @@ const CryptoCard = ({ crypto }: Props): JSX.Element => (
         <p className="font-semibold">{crypto.name}</p>
         <p className="text-gray-500">{crypto.symbol}</p>
       </div>
-    </div>
-    <div className="p-2 flex items-center">
+    </td>
+    <td className="px-6 py-4 whitespace-nowrap text-md text-gray-900">
       {Number(crypto.price).toLocaleString('en-GB', {
         style: 'currency',
         currency: 'GBP',
       })}
-    </div>
-  </div>
+    </td>
+  </tr>
 );
 
-export default CryptoCard;
+export default CryptoCardRow;
