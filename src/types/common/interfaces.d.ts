@@ -13,7 +13,7 @@ interface NomicCrypto {
   circulating_supply: string;
   max_supply: string;
   market_cap: string;
-  [key: '1d' | '7d' | '30d']: ChangeOverview;
+  '7d': ChangeOverview;
 }
 
 interface ChangeOverview {
