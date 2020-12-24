@@ -3,22 +3,18 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans antialiased text-gray-900 bg-lightBlue leading-6;
+  @apply font-sans antialiased text-gray-900 bg-indigo-100 leading-6;
 }
 
 @layer components {
-  .crypto-card {
-    @apply flex border-solid border-t border-r border-l px-6
-  }
-
   /* custom */
   .stop-gradient {
     background: linear-gradient(
       to bottom,
       theme(colors.gray.900) 0%,
-      theme(colors.gray.900) 10%,
-      theme(colors.lightBlue) 10%,
-      theme(colors.lightBlue) 100%
+      theme(colors.gray.900) 200px,
+      theme(colors.indigo.100) 200px,
+      theme(colors.indigo.100) 100%
     );
   }
 }
