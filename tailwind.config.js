@@ -6,8 +6,15 @@ module.exports = {
       fontFamily: {
         sans: ['nunito', 'ui-sans-serif'],
       },
+      scale: {
+        101: '1.01',
+      },
     },
   },
-  variants: {},
+  variants: {
+    extend: {
+      transform: ['hover', 'focus'],
+    },
+  },
   plugins: [require('tailwindcss'), require('autoprefixer')],
 };
