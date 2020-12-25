@@ -3,16 +3,10 @@
     "allowJs": false,
     "baseUrl": "src",
     "paths": {
-      "components/*": [
-        "components/*"
-      ],
+      "components/*": ["components/*"]
     },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "declaration": true,
     "skipLibCheck": true,
     "strict": false,
@@ -24,17 +18,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "typeRoots": [
-      "./src/types",
-      "node_modules/@types",
-    ],
+    "typeRoots": ["./src/types", "node_modules/@types"]
   },
-  "exclude": [
-    "node_modules",
-    ".next",
-    "out"
-  ],
-  "include": [
-    "src"
-  ]
+  "exclude": ["node_modules", ".next", "out"],
+  "include": ["src"]
 }
