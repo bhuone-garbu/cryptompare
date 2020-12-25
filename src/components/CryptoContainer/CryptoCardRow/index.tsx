@@ -14,7 +14,7 @@ const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
   return (
     <tr
       onClick={openModalHandler}
-      className="transform-gpu hover:scale-101 hover:bg-gray-100 transition duration-150 ease-in-out cursor-pointer"
+      className="transform-gpu hover:scale-101 bg-white hover:bg-gray-100 transition duration-150 ease-in-out cursor-pointer"
     >
       <td className="px-6 py-3 text-sm hidden sm:table-cell text-gray-500 text-center">
         {crypto.rank}

@@ -64,9 +64,9 @@ const CryptoContainer = (): JSX.Element => {
       <section className="stop-gradient px-6">
         <div className="container max-w-screen-lg mx-auto">
           <div className="shadow-lg overflow-hidden border-b border-gray-200 rounded-md">
-            <table className="align-middle divide-gray-200 w-full">
+            <table className="align-middle w-full">
               <CryptoHeading />
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-white">
                 {cryptos.map(crypto => (
                   <CryptoCardRow
                     key={crypto.id}

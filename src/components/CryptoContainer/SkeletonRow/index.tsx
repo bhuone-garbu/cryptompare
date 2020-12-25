@@ -5,7 +5,7 @@ const SkeletonRow = (): JSX.Element => {
   // };
 
   return (
-    <tr className="transform-gpu">
+    <tr className="transform-gpu bg-white">
       <td className="px-6 py-3 hidden sm:table-cell">
         <div className="bg-gray-300 mx-auto h-4 animate-pulse rounded"></div>
       </td>

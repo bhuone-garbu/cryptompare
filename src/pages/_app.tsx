@@ -10,7 +10,11 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
       <link
         href="https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap"
         rel="stylesheet"
-      ></link>
+      />
+      <meta
+        name="Description"
+        content="Top 100 crypto currency ranking on the market such as Bitcoin, Ethereum, Ripple, Tether, Litecoin, Bitcoin Cash, Cardano and many more. Check their historical and trending prices, all with a simple intuitive dashboard."
+      />
     </Head>
     <Component {...pageProps} />
   </>
