@@ -11,9 +11,6 @@ const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
     crypto['7d'].price_change_pct,
   ).toFixed(2)}`;
 
-  // const onClick = ({ target }: React.MouseEvent<HTMLElement>) => {
-  // };
-
   return (
     <tr
       onClick={openModalHandler}

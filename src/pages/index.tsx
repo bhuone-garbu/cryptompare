@@ -1,13 +1,8 @@
 import Head from 'next/head';
-import type { GetServerSideProps } from 'next';
 
 import CryptoContainer from 'components/CryptoContainer';
 
-interface Props {
-  cryptos: NomicCrypto[];
-}
-
-const Home: React.FC<Props> = ({ cryptos }: Props) => (
+const Home = (): JSX.Element => (
   <main className="h-screen">
     <Head>
       <title>Crypto currencies leaderboard</title>
@@ -22,15 +17,8 @@ const Home: React.FC<Props> = ({ cryptos }: Props) => (
         </h2>
       </div>
     </section>
-    <CryptoContainer cryptos={cryptos} />
+    <CryptoContainer />
   </main>
 );
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const cryptos = await fetch('http://localhost:3000/api/cryptos').then(res => res.json());
-  return {
-    props: { cryptos },
-  };
-};
 
 export default Home;
