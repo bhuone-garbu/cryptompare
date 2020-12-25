@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans antialiased text-gray-900 bg-indigo-100 leading-6;
+  @apply font-sans antialiased text-gray-900 bg-blue-100 leading-6;
 }
 
 @layer components {
@@ -13,8 +13,8 @@ body {
       to bottom,
       theme(colors.gray.900) 0%,
       theme(colors.gray.900) 200px,
-      theme(colors.indigo.100) 200px,
-      theme(colors.indigo.100) 100%
+      theme(colors.blue.100) 200px,
+      theme(colors.blue.100) 100%
     );
   }
 }

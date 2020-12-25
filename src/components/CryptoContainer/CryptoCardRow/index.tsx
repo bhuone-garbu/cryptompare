@@ -17,7 +17,7 @@ const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
   return (
     <tr
       onClick={openModalHandler}
-      className="transform-gpu hover:scale-101 hover:bg-blue-100 transition duration-150 ease-in-out cursor-pointer"
+      className="transform-gpu hover:scale-101 hover:bg-gray-100 transition duration-150 ease-in-out cursor-pointer"
     >
       <td className="px-6 py-3 text-sm hidden sm:table-cell text-gray-500 text-center">
         {crypto.rank}
@@ -40,19 +40,15 @@ const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
           currency: 'GBP',
         })}
       </td>
-      <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-md text-gray-900">
-        <div
-          className={
-            priceChange < 0 ? 'text-red-600 font-semibold' : 'text-green-800 font-semibold'
-          }
-        >
+      <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-md text-gray-900 font-semibold">
+        <div className={priceChange < 0 ? 'text-red-600' : 'text-green-700'}>
           {priceChange.toLocaleString('en-GB', {
             style: 'currency',
             currency: 'GBP',
           })}
         </div>
         <div
-          className={priceChange < 0 ? 'text-red-600' : 'text-green-800'}
+          className={priceChange < 0 ? 'text-red-600' : 'text-green-700'}
         >{`${priceChangePercent}%`}</div>
       </td>
     </tr>

@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 interface Props {
   cryptoSymbol: string;
   closeHandler: () => void;
 }
 
-const Modal = ({ cryptoSymbol, closeHandler }: Props) => {
-  console.log('Modal loaded, received: ', cryptoSymbol);
+const Modal = ({ closeHandler }: Props) => {
+  // console.log('Modal loaded, received: ', cryptoSymbol);
   return (
     <div className="fixed z-10 inset-0 overflow-y-hidden">
       <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-10 text-center sm:block sm:p-0">

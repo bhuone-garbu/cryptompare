@@ -2,17 +2,17 @@ import React, { useState, Suspense } from 'react';
 
 import CryptoHeading from './CryptoHeading';
 import CryptoCardRow from './CryptoCardRow';
+import SkeletonRow from './SkeletonRow';
 
 interface Props {
   cryptos: NomicCrypto[];
 }
+
 const Modal = React.lazy(() => import('components/Modal'));
 
 const CryptoContainer: React.FC<Props> = ({ cryptos: initialCryptos }: Props) => {
   const [selectedCrypto, setSelectedCrypto] = useState<string>(undefined);
   const [cryptos, setCryptos] = useState(initialCryptos);
-
-  console.log(selectedCrypto);
 
   const loadMore = async () => {
     const res = await fetch(`http://localhost:3000/api/cryptos?pageNo=${cryptos.length / 20 + 1}`);
@@ -29,10 +29,11 @@ const CryptoContainer: React.FC<Props> = ({ cryptos: initialCryptos }: Props) =>
       )}
       <section className="stop-gradient px-6">
         <div className="container max-w-screen-lg mx-auto">
-          <div className="shadow-lg overflow-x-scroll border-b border-gray-200 rounded-md">
+          <div className="shadow-lg overflow-hidden border-b border-gray-200 rounded-md">
             <table className="align-middle divide-gray-200 w-full">
               <CryptoHeading />
               <tbody className="bg-white divide-y divide-gray-200">
+                <SkeletonRow />
                 {cryptos.map(crypto => (
                   <CryptoCardRow
                     key={crypto.id}
