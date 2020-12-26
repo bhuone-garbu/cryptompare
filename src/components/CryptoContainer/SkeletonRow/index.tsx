@@ -6,20 +6,20 @@ const SkeletonRow = (): JSX.Element => {
 
   return (
     <tr className="transform-gpu bg-white">
-      <td className="px-6 py-3 hidden sm:table-cell">
+      <td className="crypto-rank-col">
         <div className="bg-gray-300 mx-auto h-4 animate-pulse rounded"></div>
       </td>
-      <td className="px-6 py-3 flex items-center justify-start">
+      <td className="crypto-name-col">
         <div className="bg-gray-300 h-12 w-12 sm:h-20 sm:w-20 animate-pulse rounded-full"></div>
         <div className="ml-4 space-y-2">
           <div className="bg-gray-300 h-4 w-16 animate-pulse rounded"></div>
           <div className="bg-gray-300 h-4 w-10 animate-pulse rounded"></div>
         </div>
       </td>
-      <td className="px-6 py-4">
+      <td className="crypto-price-col">
         <div className="bg-gray-300 h-4 w-24 ml-auto sm:m-0 animate-pulse rounded"></div>
       </td>
-      <td className="hidden sm:table-cell px-6 py-4 space-y-2">
+      <td className="crypto-price-change-col space-y-2">
         <div className="bg-gray-300 h-4 w-20 animate-pulse rounded"></div>
         <div className="bg-gray-300 h-4 w-16 animate-pulse rounded"></div>
       </td>
