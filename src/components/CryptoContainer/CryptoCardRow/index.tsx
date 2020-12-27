@@ -14,20 +14,20 @@ const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
   return (
     <tr
       onClick={openModalHandler}
-      className="transform-gpu hover:scale-101 bg-white hover:bg-gray-100 transition duration-150 ease-in-out cursor-pointer"
+      className="transform-gpu hover:scale-101 bg-white hover:bg-gray-100 transition duration-150 ease-in-out cursor-pointer border-collapse"
     >
       {/* RANK - hidden on small screen */}
       <td className="crypto-rank-col">{crypto.rank}</td>
 
       {/* Logo and Name */}
-      <td className="crypto-name-col flex items-center">
+      <td className="crypto-name-col">
         <img
-          className="object-contain h-12 w-12 sm:h-20 sm:w-20"
+          className="inline-block my-auto object-contain h-12 w-12 sm:h-20 sm:w-20"
           loading="lazy"
           src={crypto.logo_url}
           alt={`${crypto.name.toLocaleLowerCase()}-log0`}
         />
-        <div className="ml-4">
+        <div className="inline-block my-auto ml-4">
           <p className="font-semibold">{crypto.name}</p>
           <p className="text-gray-500">{crypto.symbol}</p>
         </div>
