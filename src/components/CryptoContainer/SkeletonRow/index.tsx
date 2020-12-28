@@ -13,11 +13,14 @@ const SkeletonRow = (): JSX.Element => (
       </div>
     </td>
     <td className="crypto-price-col">
-      <div className="bg-gray-300 h-4 w-24 ml-auto sm:m-0 animate-pulse rounded"></div>
+      <div className="bg-gray-300 h-4 w-24 ml-auto animate-pulse rounded"></div>
     </td>
     <td className="crypto-price-change-col space-y-2">
-      <div className="bg-gray-300 h-4 w-20 animate-pulse rounded"></div>
-      <div className="bg-gray-300 h-4 w-16 animate-pulse rounded"></div>
+      <div className="bg-gray-300 h-4 w-20 ml-auto animate-pulse rounded"></div>
+      <div className="bg-gray-300 h-4 w-16 ml-auto animate-pulse rounded"></div>
+    </td>
+    <td className="crypto-market-cap-col">
+      <div className="bg-gray-300 h-4 w-32 ml-auto animate-pulse rounded"></div>
     </td>
   </tr>
 );

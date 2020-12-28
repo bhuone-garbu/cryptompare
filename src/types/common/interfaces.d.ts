@@ -9,8 +9,8 @@ interface NomicCrypto {
   rank: string;
   status: 'active' | 'inactive' | 'dead';
   price: string;
-  price_timestamp: string; // '2020-12-20T14:43:00Z';
   circulating_supply: string;
+  rank_delta: string;
   max_supply: string;
   market_cap: string;
   '7d': ChangeOverview;

@@ -53,6 +53,14 @@ const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
           className={priceChange < 0 ? 'text-red-600' : 'text-green-700'}
         >{`${priceChangePercent}%`}</div>
       </td>
+
+      {/* Market Cap */}
+      <td className="crypto-market-cap-col">
+        {Number(crypto.market_cap).toLocaleString('en-GB', {
+          style: 'currency',
+          currency: 'GBP',
+        })}
+      </td>
     </tr>
   );
 };

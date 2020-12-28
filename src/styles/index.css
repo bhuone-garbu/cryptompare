@@ -26,12 +26,15 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     @apply px-6 py-3 text-sm hidden sm:table-cell text-gray-500 text-center;
   }
   .crypto-name-col {
-    @apply px-6 py-3 whitespace-nowrap flex items-center;
+    @apply px-6 py-3 flex items-center;
   }
   .crypto-price-col {
-    @apply px-6 py-3 text-right sm:text-left whitespace-nowrap text-gray-900;
+    @apply px-6 py-3 text-right whitespace-nowrap text-gray-900;
   }
   .crypto-price-change-col {
-    @apply hidden sm:table-cell px-6 py-3 whitespace-nowrap text-gray-900 font-semibold;
+    @apply hidden sm:table-cell px-6 py-3 whitespace-nowrap text-right text-gray-900 font-semibold;
+  }
+  .crypto-market-cap-col {
+    @apply hidden md:table-cell px-6 py-3 whitespace-nowrap text-right text-gray-900;
   }
 }

@@ -5,7 +5,7 @@ const CryptoHeading = (): JSX.Element => (
         scope="col"
         className="hidden sm:table-cell px-2 py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider border-gray-50"
       >
-        #&nbsp;Rank
+        #
       </th>
       <th
         scope="col"
@@ -15,15 +15,21 @@ const CryptoHeading = (): JSX.Element => (
       </th>
       <th
         scope="col"
-        className="px-6 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider border-gray-50"
+        className="px-6 py-3 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider border-gray-50"
       >
         Price
       </th>
       <th
         scope="col"
-        className="hidden sm:table-cell px-6 py-3 text-left text-xs font-semibold text-gray-500 tracking-wider border-gray-50"
+        className="hidden sm:table-cell px-6 py-3 text-right text-xs font-semibold text-gray-500 tracking-wider border-gray-50"
       >
         <span className="uppercase">price change</span>&nbsp;(30d)
+      </th>
+      <th
+        scope="col"
+        className="hidden md:table-cell px-6 py-3 text-right text-xs font-semibold uppercase text-gray-500 tracking-wider border-gray-50"
+      >
+        Market Cap
       </th>
     </tr>
   </thead>

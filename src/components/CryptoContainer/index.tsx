@@ -63,7 +63,7 @@ const CryptoContainer = (): JSX.Element => {
       )}
       <section className="stop-gradient px-6">
         <div className="container max-w-screen-lg mx-auto">
-          <div className="shadow-lg overflow-hidden rounded-md">
+          <div className="shadow-lg overflow-x-auto rounded-md">
             <table className="align-middle w-full border-collapse bg-white">
               <CryptoHeading />
               <tbody className="bg-white border-white">
@@ -74,6 +74,7 @@ const CryptoContainer = (): JSX.Element => {
                     openModalHandler={() => setSelectedCrypto(crypto.symbol)}
                   />
                 ))}
+
                 {isLoading && Array.from({ length: 10 }, (_, i) => <SkeletonRow key={i} />)}
               </tbody>
             </table>
