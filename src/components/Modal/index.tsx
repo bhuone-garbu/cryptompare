@@ -1,18 +1,16 @@
-import { useEffect } from 'react';
-
 interface Props {
   children: React.ReactNode;
   closeHandler: () => void;
 }
 
 const Modal: React.FC<Props> = ({ closeHandler, children }) => {
-  useEffect(() => {
-    return () => console.log('modal unmounted');
-  });
   return (
-    <div className="fixed z-10 inset-0 overflow-y-hidden">
+    <div className="fixed z-10 inset-0 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen pt-4 px-6 pb-10 text-center">
-        <div className="fixed inset-0 transition-opacity max-h-full" aria-hidden="true">
+        <div
+          className="fixed inset-0 transition-opacity max-h-full overflow-y-auto"
+          aria-hidden="true"
+        >
           <div className="absolute inset-0 bg-gray-800 opacity-75"></div>
         </div>
 

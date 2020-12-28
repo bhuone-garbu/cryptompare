@@ -22,11 +22,12 @@ const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
       {/* Logo and Name */}
       <td className="crypto-name-col">
         <img
-          className="inline-block my-auto object-contain h-12 w-12 sm:h-20 sm:w-20"
           loading="lazy"
+          className="inline-block my-auto object-contain h-12 w-12 sm:h-20 sm:w-20"
           src={crypto.logo_url}
           alt={`${crypto.name.toLocaleLowerCase()}-log0`}
         />
+
         <div className="inline-block my-auto ml-4">
           <p className="font-semibold">{crypto.name}</p>
           <p className="text-gray-500">{crypto.symbol}</p>

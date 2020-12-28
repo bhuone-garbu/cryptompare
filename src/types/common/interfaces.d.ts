@@ -31,6 +31,7 @@ interface NomicCryptoDetail {
   name: string;
   description: string;
   website_url: string;
+  logo_url: string;
 }
 
 interface CoingeckoMarketDetail {
