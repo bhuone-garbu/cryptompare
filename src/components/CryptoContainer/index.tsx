@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import CryptoDetail from '../CryptoDetail';
+
 import CryptoHeading from './CryptoHeading';
 import CryptoCardRow from './CryptoCardRow';
 import SkeletonRow from './SkeletonRow';
@@ -59,7 +61,9 @@ const CryptoContainer = (): JSX.Element => {
   return (
     <>
       {selectedCrypto && (
-        <Modal cryptoSymbol={selectedCrypto} closeHandler={() => setSelectedCrypto(undefined)} />
+        <Modal closeHandler={() => setSelectedCrypto(undefined)}>
+          <CryptoDetail cryptoId={selectedCrypto} />
+        </Modal>
       )}
       <section className="stop-gradient px-6">
         <div className="container max-w-screen-lg mx-auto">
@@ -71,7 +75,7 @@ const CryptoContainer = (): JSX.Element => {
                   <CryptoCardRow
                     key={crypto.id}
                     crypto={crypto}
-                    openModalHandler={() => setSelectedCrypto(crypto.symbol)}
+                    openModalHandler={() => setSelectedCrypto(crypto.id)}
                   />
                 ))}
 

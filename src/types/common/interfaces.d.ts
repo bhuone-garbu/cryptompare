@@ -38,3 +38,5 @@ interface CoingeckoMarketDetail {
   market_caps: [number, number][];
   total_volumes: [number, number][];
 }
+
+type CryptoFullDetail = NomicCryptoDetail & CoingeckoMarketDetail;

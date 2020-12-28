@@ -1,11 +1,14 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { useEffect } from 'react';
+
 interface Props {
-  cryptoSymbol: string;
+  children: React.ReactNode;
   closeHandler: () => void;
 }
 
-const Modal = ({ closeHandler }: Props) => {
-  console.log('Modal loaded');
+const Modal: React.FC<Props> = ({ closeHandler, children }) => {
+  useEffect(() => {
+    return () => console.log('modal unmounted');
+  });
   return (
     <div className="fixed z-10 inset-0 overflow-y-hidden">
       <div className="flex items-center justify-center min-h-screen pt-4 px-6 pb-10 text-center">
@@ -19,19 +22,7 @@ const Modal = ({ closeHandler }: Props) => {
           aria-modal="true"
           aria-labelledby="modal-headline"
         >
-          <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <div className="mt-3 text-center sm:mt-0 sm:ml-4">
-              <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
-                Detail Summary
-              </h3>
-              <div className="mt-2">
-                <p className="text-sm text-gray-500">
-                  Are you sure you want to deactivate your account? All of your data will be
-                  permanently removed. This action cannot be undone.
-                </p>
-              </div>
-            </div>
-          </div>
+          <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 overflow-y-scroll">{children}</div>
           <div className="bg-gray-100 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
             <button
               onClick={closeHandler}

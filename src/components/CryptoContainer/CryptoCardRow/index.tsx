@@ -59,6 +59,7 @@ const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
         {Number(crypto.market_cap).toLocaleString('en-GB', {
           style: 'currency',
           currency: 'GBP',
+          maximumSignificantDigits: 12,
         })}
       </td>
     </tr>
