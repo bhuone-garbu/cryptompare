@@ -32,3 +32,9 @@ interface NomicCryptoDetail {
   description: string;
   website_url: string;
 }
+
+interface CoingeckoMarketDetail {
+  prices: [number, number][];
+  market_caps: [number, number][];
+  total_volumes: [number, number][];
+}
