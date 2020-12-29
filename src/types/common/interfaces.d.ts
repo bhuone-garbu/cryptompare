@@ -13,7 +13,7 @@ interface NomicCrypto {
   rank_delta: string;
   max_supply: string;
   market_cap: string;
-  '7d': ChangeOverview;
+  '7d'?: ChangeOverview;
 }
 
 interface ChangeOverview {

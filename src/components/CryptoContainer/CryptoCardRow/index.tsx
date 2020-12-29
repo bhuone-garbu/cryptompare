@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import icons from 'cryptocurrency-icons';
 
 interface Props {
   crypto: NomicCrypto;
@@ -6,10 +7,18 @@ interface Props {
 }
 
 const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
-  const priceChange = Number(crypto['7d'].price_change);
-  const priceChangePercent = `${priceChange > 0 ? '+' : ''}${Number(
-    crypto['7d'].price_change_pct,
-  ).toFixed(2)}`;
+  // it's possible that library might not have all the icon on .svg format
+  const [imageSrc, setImage] = useState<string>(`/logos/${crypto.symbol.toLowerCase()}.svg`);
+
+  const priceChange = Number(crypto['7d']?.price_change);
+  const priceChangePercent = priceChange
+    ? `${priceChange > 0 ? '+' : ''}${Number(crypto['7d'].price_change_pct).toFixed(2)}`
+    : undefined;
+
+  function onImageError(event: React.SyntheticEvent<HTMLImageElement>) {
+    event.currentTarget.onerror = null;
+    setImage(crypto.logo_url);
+  }
 
   return (
     <tr
@@ -23,9 +32,10 @@ const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
       <td className="crypto-name-col">
         <img
           loading="lazy"
-          className="inline-block my-auto object-contain h-12 w-12 sm:h-20 sm:w-20"
-          src={crypto.logo_url}
-          alt={`${crypto.name.toLocaleLowerCase()}-log0`}
+          className="inline-block my-auto object-contain max-h-12 w-12 sm:max-h-20 sm:w-20"
+          src={imageSrc}
+          alt={`${crypto.name.toLocaleLowerCase()}-logo`}
+          onError={onImageError}
         />
 
         <div className="inline-block my-auto ml-4">
@@ -44,24 +54,32 @@ const CryptoCardRow = ({ crypto, openModalHandler }: Props): JSX.Element => {
 
       {/* Price change */}
       <td className="crypto-price-change-col">
-        <div className={priceChange < 0 ? 'text-red-600' : 'text-green-700'}>
-          {priceChange.toLocaleString('en-GB', {
-            style: 'currency',
-            currency: 'GBP',
-          })}
-        </div>
-        <div
-          className={priceChange < 0 ? 'text-red-600' : 'text-green-700'}
-        >{`${priceChangePercent}%`}</div>
+        {priceChange ? (
+          <>
+            <div className={priceChange < 0 ? 'text-red-600' : 'text-green-700'}>
+              {priceChange.toLocaleString('en-GB', {
+                style: 'currency',
+                currency: 'GBP',
+              })}
+            </div>
+            <div
+              className={priceChange < 0 ? 'text-red-600' : 'text-green-700'}
+            >{`${priceChangePercent}%`}</div>
+          </>
+        ) : (
+          'Info not available'
+        )}
       </td>
 
       {/* Market Cap */}
       <td className="crypto-market-cap-col">
-        {Number(crypto.market_cap).toLocaleString('en-GB', {
-          style: 'currency',
-          currency: 'GBP',
-          maximumSignificantDigits: 12,
-        })}
+        {priceChange
+          ? Number(crypto.market_cap).toLocaleString('en-GB', {
+              style: 'currency',
+              currency: 'GBP',
+              maximumSignificantDigits: 12,
+            })
+          : 'Info not available'}
       </td>
     </tr>
   );

@@ -48,15 +48,15 @@ const CryptoContainer = (): JSX.Element => {
         cryptos.length === 0 ? 1 : cryptos.length / 20 + 1
       }`,
     );
-    const newData = await res.json();
-    setCryptos([...cryptos, ...newData]);
+    const newData = (await res.json()) as NomicCrypto[];
+    setCryptos(cryptos.concat(newData));
 
     setIsLoading(false);
   };
 
   useEffect(() => {
     loadCryptos();
-  }, []);
+  }, [selectedCrypto]);
 
   return (
     <>
