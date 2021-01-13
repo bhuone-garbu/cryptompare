@@ -1,3 +1,7 @@
-# Crypto leaderboard
+# Cryptomparee
 
-Just experimenting with Next.js/Typescript and Tailwind CSS (utility)
+## Techstack
+
+- Next.js
+- Typescript
+- Tailwind CSS (experiment)
