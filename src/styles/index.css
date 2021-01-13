@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans antialiased text-gray-900 bg-gray-900 leading-6;
+  @apply font-sans antialiased text-gray-200 bg-gray-900 leading-6 ;
 }
 
 table, caption, tbody, tfoot, thead, tr, th, td {

@@ -65,7 +65,7 @@ const CryptoContainer = (): JSX.Element => {
           <CryptoDetail cryptoId={selectedCrypto} />
         </Modal>
       )}
-      <section className="stop-gradient px-6">
+      <section className="stop-gradient px-6 text-gray-900">
         <div className="container max-w-screen-lg mx-auto">
           <div className="shadow-lg overflow-x-auto rounded-md">
             <table className="align-middle w-full border-collapse bg-white">
