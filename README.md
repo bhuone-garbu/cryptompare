@@ -1,4 +1,6 @@
-# Cryptomparee
+# Cryptompare
+
+Crypto Compare == Crypt**o**mpare
 
 ## Techstack
 
