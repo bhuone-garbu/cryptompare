@@ -1,6 +1,6 @@
 # Cryptompare
 
-Crypto Compare == Crypt**o**mpare
+Crypt**o**mpare
 
 ## Techstack
 
