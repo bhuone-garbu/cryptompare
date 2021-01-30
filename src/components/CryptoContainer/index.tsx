@@ -62,7 +62,7 @@ const CryptoContainer: React.FC = () => {
 
   useEffect(() => {
     loadCryptos();
-  }, [selectedCrypto]);
+  }, []);
 
   return (
     <>
