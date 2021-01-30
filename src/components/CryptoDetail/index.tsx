@@ -8,7 +8,7 @@ const CryptoDetail: React.FC<Props> = ({ cryptoId }) => {
   const [data, setData] = useState<CryptoFullDetail>();
 
   const loadCrypto = async () => {
-    const res = await fetch(`http://localhost:3000/api/cryptos/${cryptoId}`);
+    const res = await fetch(`${window.location.href}api/cryptos/${cryptoId}`);
     const data = await res.json();
     setData(data);
   };

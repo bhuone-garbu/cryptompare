@@ -49,10 +49,10 @@ const CryptoContainer: React.FC = () => {
   const loadCryptos = async () => {
     setIsLoading(true);
 
-    const env = process.env.NODE_ENV || 'development';
-    const host = env === 'production' ? 'https://cryptompare.vercel.app' : 'http://localhost:3000';
     const res = await fetch(
-      `${host}/api/cryptos?pageNo=${cryptos.length === 0 ? 1 : cryptos.length / 20 + 1}`,
+      `${window.location.href}api/cryptos?pageNo=${
+        cryptos.length === 0 ? 1 : cryptos.length / 20 + 1
+      }`,
     );
     const newData = (await res.json()) as NomicCrypto[];
     setCryptos(cryptos.concat(newData));
