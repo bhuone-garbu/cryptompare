@@ -1,6 +1,5 @@
 module.exports = {
-  future: {},
-  purge: ['./pages/**/*.ts', './components/**/*.ts'],
+  purge: ['./src/pages/**/*.tsx', './src/components/**/*.tsx'],
   theme: {
     extend: {
       fontFamily: {
@@ -16,5 +15,4 @@ module.exports = {
       transform: ['hover', 'focus'],
     },
   },
-  plugins: [require('tailwindcss'), require('autoprefixer')],
 };
