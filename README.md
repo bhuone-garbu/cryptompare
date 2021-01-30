@@ -7,3 +7,4 @@ Crypt**o**mpare
 - Next.js
 - Typescript
 - Tailwind CSS (experiment)
+- Vercel for deployment
