@@ -21,7 +21,8 @@ const CryptoDetail: React.FC<Props> = ({ cryptoId }) => {
   if (!data) return <p>Loading ... </p>;
 
   return (
-    <>
+    <article className="text-gray-900">
+      <p className="font-medium text-lg">TODO!!!</p>
       <h4 className="text-left text-xl font-medium mb-4">
         What is <span className="font-bold">{data.name}</span>?
         <a
@@ -42,7 +43,7 @@ const CryptoDetail: React.FC<Props> = ({ cryptoId }) => {
           </p>
         )}
       </div>
-    </>
+    </article>
   );
 };
 

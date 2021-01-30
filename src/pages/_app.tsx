@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 
 import '../styles/index.css';
 
-const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => (
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
   <>
     <Head>
       <link rel="icon" href="/favicon.svg" />

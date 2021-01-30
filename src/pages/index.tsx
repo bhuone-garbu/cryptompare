@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import CryptoContainer from 'components/CryptoContainer';
 
-const Home = (): JSX.Element => (
+const Home: React.FC = () => (
   <main className="h-screen">
     <Head>
       <title>Crypto leaderboard</title>

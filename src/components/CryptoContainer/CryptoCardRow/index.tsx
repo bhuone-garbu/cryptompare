@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import icons from 'cryptocurrency-icons';
 
 interface Props {
   crypto: NomicCrypto;

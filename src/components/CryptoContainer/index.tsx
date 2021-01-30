@@ -8,7 +8,12 @@ import SkeletonRow from './SkeletonRow';
 
 import Modal from 'components/Modal';
 
-const EndedBanner = ({ maxLength }): JSX.Element => (
+interface Props {
+  maxLength: number;
+}
+
+// probably create separate component for this
+const EndedBanner: React.FC<Props> = ({ maxLength }) => (
   <div className="px-6 py-4 my-10 flex items-center bg-indigo-700 rounded-md">
     <div className="rounded-full bg-gray-800 h-10 w-10 p-2 flex justify-center items-center">
       <svg
@@ -34,7 +39,7 @@ const EndedBanner = ({ maxLength }): JSX.Element => (
   </div>
 );
 
-const CryptoContainer = (): JSX.Element => {
+const CryptoContainer: React.FC = () => {
   const [selectedCrypto, setSelectedCrypto] = useState<string>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [cryptos, setCryptos] = useState<NomicCrypto[]>([]);
